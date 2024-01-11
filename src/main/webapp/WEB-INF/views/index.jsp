@@ -46,6 +46,7 @@
             <td>Ho Ten</td>
             <td>Dia Chi</td>
             <td>Gioi Tinh</td>
+            <td>Action</td>
         </tr>
     </thead>
     <tbody>
@@ -55,6 +56,7 @@
             <td>${sinhVien.hoTen}</td>
             <td>${sinhVien.diaChi}</td>
             <td>${sinhVien.gioiTinh}</td>
+            <td><a href="/detail?id=${sinhVien.maSinhVien}" class="btn btn-primary">Chi tiet</a></td>
         </tr>
     </c:forEach>
     </tbody>

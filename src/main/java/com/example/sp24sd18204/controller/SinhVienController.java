@@ -36,4 +36,17 @@ public class SinhVienController {
         listSinhVien.add(sinhVien);
         return "redirect:/hien-thi";
     }
+
+    @GetMapping("/detail")
+    String detail(Model model,
+                  @RequestParam("id") String maSinhVien){
+        SinhVien sinhVien = new SinhVien();
+        for(SinhVien sv : listSinhVien){
+            if(maSinhVien.equals(sv.getMaSinhVien())){
+                sinhVien = sv;
+            }
+        }
+        model.addAttribute("sinhVien", sinhVien);
+        return "detail";
+    }
 }
