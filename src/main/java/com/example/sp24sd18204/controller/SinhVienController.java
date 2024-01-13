@@ -49,4 +49,31 @@ public class SinhVienController {
         model.addAttribute("sinhVien", sinhVien);
         return "detail";
     }
+
+    @PostMapping("/update")
+    String update(@RequestParam("maSinhVien") String maSinhVien,
+                  @RequestParam("hoTen") String hoTen,
+                  @RequestParam("diaChi") String diaChi,
+                  @RequestParam("gioiTinh") String gioiTinh){
+        for (SinhVien sinhVien:listSinhVien){
+            if (sinhVien.getMaSinhVien().equals(maSinhVien)){
+                sinhVien.setDiaChi(diaChi);
+                sinhVien.setGioiTinh(gioiTinh);
+                sinhVien.setHoTen(hoTen);
+            }
+        }
+        return "redirect:/hien-thi";
+    }
+    @GetMapping("/delete")
+    String delete(@RequestParam("id") String maSinhVien){
+        SinhVien sinhVien = new SinhVien();
+        for (SinhVien sv:listSinhVien){
+            if(sv.getMaSinhVien().equals(maSinhVien)){
+                sinhVien = sv;
+            }
+        }
+        listSinhVien.remove(sinhVien);
+        return "redirect:/hien-thi";
+    }
+
 }

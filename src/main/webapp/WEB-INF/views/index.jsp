@@ -56,7 +56,8 @@
             <td>${sinhVien.hoTen}</td>
             <td>${sinhVien.diaChi}</td>
             <td>${sinhVien.gioiTinh}</td>
-            <td><a href="/detail?id=${sinhVien.maSinhVien}" class="btn btn-primary">Chi tiet</a></td>
+            <td><a href="/detail?id=${sinhVien.maSinhVien}" class="btn btn-primary">Chi tiet</a>
+                <a href="/delete?id=${sinhVien.maSinhVien}" class="btn btn-primary">Xoa</a></td>
         </tr>
     </c:forEach>
     </tbody>

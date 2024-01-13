@@ -7,7 +7,7 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body class="container">
-<form action="#" method="post">
+<form action="/update" method="post">
     <div class="mb-3">
         <label class="form-label">Ma sinh vien</label>
         <input type="text" class="form-control" name="maSinhVien" value="${sinhVien.maSinhVien}">
