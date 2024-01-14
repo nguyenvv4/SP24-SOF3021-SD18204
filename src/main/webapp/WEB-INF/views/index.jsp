@@ -42,8 +42,12 @@
 <%--</form>--%>
 
 <form:form action="/addNew" method="post" modelAttribute="sinhVienViewModel">
+    <label  class="form-label">Ho Ten</label>
     <form:input path="hoTen" cssClass="form-control"/>
-    <form:input path="diaChi"/>
+    <form:errors path="hoTen"/><br/>
+    <label  class="form-label">Dia Chi</label>
+    <form:input path="diaChi" cssClass="form-control"/>
+    <form:errors path="diaChi"/><br/>
     <button>Submit</button>
 </form:form>
 <h2>Thong tin sinh vien</h2>

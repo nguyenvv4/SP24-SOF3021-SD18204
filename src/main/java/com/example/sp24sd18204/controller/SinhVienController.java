@@ -4,6 +4,7 @@ import com.example.sp24sd18204.entity.SinhVien;
 import com.example.sp24sd18204.entity.view.SinhVienViewModel;
 import com.example.sp24sd18204.service.SinhVienService;
 import com.example.sp24sd18204.service.impl.SinhVienServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,7 +50,13 @@ public class SinhVienController {
 //    }
 
     @PostMapping("/addNew")
-    String addNew(@ModelAttribute("sinhVienViewModel")SinhVienViewModel sinhVienViewModel) {
+    String addNew(@Valid @ModelAttribute("sinhVienViewModel")SinhVienViewModel sinhVienViewModel,
+                  BindingResult bindingResult,
+                  Model model) {
+        if (bindingResult.hasErrors()){
+////            model.addAttribute("mé")
+            return "index";
+        }
         return "redirect:/hien-thi";
     }
 
