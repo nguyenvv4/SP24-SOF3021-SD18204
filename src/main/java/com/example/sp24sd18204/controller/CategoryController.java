@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class CategoryContrller {
+public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;
