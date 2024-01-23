@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -60,9 +57,22 @@ public class SinhVienController {
         return "redirect:/hien-thi";
     }
 
-    @GetMapping("/detail")
+//    @GetMapping("/detail")
+//    String detail(Model model,
+//                  @RequestParam("id") String maSinhVien){
+//        SinhVien sinhVien = new SinhVien();
+//        for(SinhVien sv : listSinhVien){
+//            if(maSinhVien.equals(sv.getMaSinhVien())){
+//                sinhVien = sv;
+//            }
+//        }
+//        model.addAttribute("sinhVien", sinhVien);
+//        return "detail";
+//    }
+
+    @GetMapping("/detail/{id}")
     String detail(Model model,
-                  @RequestParam("id") String maSinhVien){
+                  @PathVariable("id") String maSinhVien){
         SinhVien sinhVien = new SinhVien();
         for(SinhVien sv : listSinhVien){
             if(maSinhVien.equals(sv.getMaSinhVien())){
